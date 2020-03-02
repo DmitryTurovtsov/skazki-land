@@ -1,0 +1,40 @@
+@import './../../../../css/service';
+@import './../../../../css/var';
+
+.footer_wrapper {
+    background-color: $light-gray;
+    border-top: 1px solid $gray;
+    font-size: 0; // because inline-block inner
+    line-height: 0;
+    padding: $ui-unit;
+    text-align: center;
+}
+
+.footer_list {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer_list_item {
+    display: block;
+}
+
+%footer-text-item {
+    display: block;
+    font-size: 16px;
+    margin: $ui-unit / 2 $ui-unit;
+}
+
+.footer__copy_right {
+    @extend %footer-text-item;
+
+    color: $main-text-color;
+}
+
+.footer__link {
+    @extend %link;
+    @extend %footer-text-item;
+}

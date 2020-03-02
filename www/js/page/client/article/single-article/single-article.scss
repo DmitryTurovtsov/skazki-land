@@ -1,0 +1,25 @@
+@import './../../../../../css/var';
+
+.markdown {
+    display: block;
+    padding-bottom: $ui-unit * 2;
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        width: auto;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.single_article__author {
+    display: block;
+    font-size: 16px;
+    font-style: italic;
+    padding-bottom: $ui-unit * 2;
+}

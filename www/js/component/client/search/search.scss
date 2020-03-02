@@ -1,0 +1,109 @@
+@import './../../../../css/var';
+@import './../../../../css/service';
+
+%search-wrapper {
+    display: block;
+    position: relative;
+}
+
+.desktop__search_input {
+    background-color: $light-gray;
+    background-image: url('./image/searh-icon.svg');
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: auto 65%;
+    border: 1px solid $color-border;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: block;
+    font-size: 16px;
+    padding: 7px 40px 7px 10px;
+    width: 100%;
+}
+
+.desktop__search_input__stop_search {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    z-index: 1;
+}
+
+.desktop__search_wrapper {
+    @extend %search-wrapper;
+
+    transition: width linear 0.1s;
+    width: 33%;
+
+    &.search_wrapper__active {
+        width: 50%;
+    }
+}
+
+.mobile__search_wrapper {
+    @extend %search-wrapper;
+
+    width: 105px;
+
+    &.search_wrapper__active {
+        width: 100%;
+    }
+}
+
+.desktop__search_wrapper,
+.mobile__search_wrapper {
+    &.search_wrapper__active {
+        .desktop__search_input {
+            background-image: url('./image/stop-searh-icon.svg');
+        }
+    }
+}
+
+%search-result-list,
+.search_result_list {
+    background-color: $main-background-text-color;
+    border: 1px solid $main-text-color;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    display: block;
+    max-height: 60vh;
+    overflow: auto;
+    padding: $ui-unit;
+    position: absolute;
+    transform: translateZ(0);
+    width: 100%;
+    z-index: 1;
+}
+
+.search_result_list_item {
+    display: block;
+    list-style: none;
+}
+
+.search_result_item {
+    display: block;
+    font-size: 16px;
+    padding-bottom: $ui-unit;
+    padding-top: $ui-unit;
+}
+
+.search_result_list__no_result {
+    @extend %search-result-list;
+
+    font-size: 16px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.search_result_list__in_progress {
+    @extend %search-result-list;
+
+    padding-bottom: 20px;
+    padding-top: 20px;
+}

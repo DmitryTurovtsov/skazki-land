@@ -1,0 +1,53 @@
+@import '../../../../../../../css/var';
+
+$file-preview-width: 256px;
+$file-preview-height: 256px;
+
+.file_wrapper {
+    background-color: #777;
+    border-radius: $ui-unit;
+    display: block;
+    height: $file-preview-height;
+    overflow: hidden;
+    position: relative;
+    width: $file-preview-width;
+}
+
+.file_name {
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    box-sizing: border-box;
+    color: #fff;
+    display: block;
+    left: 0;
+    padding: $ui-unit;
+    position: absolute;
+    user-select: none;
+    width: 100%;
+    z-index: 1;
+}
+
+.file__mime_type {
+    color: #fff;
+    display: block;
+    font-family: $main-monospace-font-family;
+    font-size: 14px;
+    padding: 16px;
+}
+
+.file__media_content {
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.file {
+    left: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 0;
+}
